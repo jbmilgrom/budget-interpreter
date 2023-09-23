@@ -36,7 +36,7 @@
     "dev": "nodemon ./src/app/index.ts",
     "start": "ts-node ./src/app/index.ts",
     "populate-pinecone": "ts-node ./src/scripts/langchain/populateOpenAiPineconeStore.ts",
-    "prepare": "husky install"
+    "prepare": "husky install & husky add .husky/pre-commit \"npx pretty-quick --staged\""
   },
   "repository": {
     "type": "git",
