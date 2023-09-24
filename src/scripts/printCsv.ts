@@ -17,9 +17,13 @@ console.log(`Range: (${first}, ${last})\n`);
 
   let i = 0;
   for await (const line of fileStream) {
-    if (first <= i && i <= last) {
-      console.log("line", line);
+    if (i > last) {
+      return;
     }
+    if (i < first) {
+      continue;
+    }
+    console.log("line", line);
     i++;
   }
 })();
